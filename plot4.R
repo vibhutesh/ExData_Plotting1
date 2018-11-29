@@ -13,6 +13,8 @@ RangeData$Sub_metering_3<- as.numeric(RangeData$Sub_metering_3)
 RangeData$Voltage<- as.numeric(RangeData$Voltage)
 RangeData$Global_reactive_power<- as.numeric(RangeData$Global_reactive_power)
 
+png("plot4.png", width = 480, height = 480)
+
 par(mfrow=c(2,2), mar=c(4,4,2,1))
 
 with(RangeData,{
@@ -26,5 +28,5 @@ with(RangeData,{
   plot(datetime, Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
   
 })
-png("plot4.png", width = 480, height = 480)
+
 dev.off()
