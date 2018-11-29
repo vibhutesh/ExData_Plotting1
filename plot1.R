@@ -4,7 +4,8 @@ DataFrame <- as.data.frame(dataread)
 RangeData <- DataFrame[which(DataFrame$Date %in% DateRange),]
 RangeData$Time <- strptime(do.call(paste0,RangeData[c(1,2)]), "%d/%m/%Y%H:%M:%S")
 RangeData$Date <- as.Date(RangeData$Date, "%d/%m/%Y")
-hist (as.numeric(RangeData$Global_active_power), col= "red", xlab= "Global Active Power (kilowatts)", main = "Global Active Power")
 png("plot1.png", width = 480, height = 480)
+hist (as.numeric(RangeData$Global_active_power), col= "red", xlab= "Global Active Power (kilowatts)", main = "Global Active Power")
+
 
 dev.off()
